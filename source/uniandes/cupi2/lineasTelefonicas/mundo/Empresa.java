@@ -46,6 +46,7 @@ public class Empresa
     public Empresa( )
     {
         linea1 = new LineaTelefonica( );
+        
 
 
         // TODO Parte3 PuntoA: Construir linea2 y linea3.
