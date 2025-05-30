@@ -45,6 +45,11 @@ public class LineaTelefonica
      */
     public LineaTelefonica( )
     {
+    	numeroLlamadas = 0;
+    	numeroMinutos = 0;
+    	costoLlamadas = 0; // Inicialize los atribusto de número de llamadas, número de minutos y costo de llamadas
+    	
+    	
     	// TODO Parte2 PuntoA: Inicializar el número de llamadas, número de minutos y costo de llamadas en 0.
     }
 
