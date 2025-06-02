@@ -152,33 +152,16 @@ public class Empresa
 
   
     /**
-     * Agrega una llamada de larga distancia a la línea telefónica 1. <br>
-     * <b>post: </b> Se agrega la llamada a la línea 1.
-     * @param pMinutos Número de minutos de la llamada. pMinutos > 0.
+     * Agrega una llamada de larga distancia a una línea telefónica específica. <br>
+     * @param pMinutos Número de minutos de la llamada. `pMinutos` > 0.
      */
-    public void agregarLlamadaLargaDistanciaLinea1( int pMinutos )
+    public void agregarLlamadaLargaDistancia( int indiceLinea, int pMinutos )
     {
-    	linea1.agregarLlamadaLargaDistancia( pMinutos );
-    }
+        // Valida que el índice de la línea sea válido antes de intentar acceder a ella.
+        if (indiceLinea >= 0 && indiceLinea < lineas.length) {
+            lineas[indiceLinea].agregarLlamadaLargaDistancia(pMinutos);
+        }
 
-    /**
-     * Agrega una llamada de larga distancia a la línea telefónica 2. <br>
-     * <b>post: </b> Se agrega la llamada a la línea 2.
-     * @param pMinutos Número de minutos de la llamada. pMinutos > 0.
-     */
-    public void agregarLlamadaLargaDistanciaLinea2( int pMinutos )
-    {
-        // TODO Parte3 PuntoK: Completar el método según la documentación dada.
-    }
-
-    /**
-     * Agrega una llamada de larga distancia a la línea telefónica 3. <br>
-     * <b>post: </b> Se agrega la llamada a la línea 3.
-     * @param pMinutos Número de minutos de la llamada. pMinutos > 0.
-     */
-    public void agregarLlamadaLargaDistanciaLinea3( int pMinutos )
-    {
-        // TODO Parte3 PuntoL: Completar el método según la documentación dada.
     }
 
     /**

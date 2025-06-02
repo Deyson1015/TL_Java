@@ -142,14 +142,15 @@ public class InterfazLineasTelefonicas extends JFrame
                 	int indiceLinea = pNumeroLinea - 1;
                 	
                 	switch (tipo) {
-                	
+                	 
                 	case "Local":
                 		empresa.agregarLlamadaLocal(indiceLinea, min);
                 		break;
                 		
-                	case "Larga Distacia":
-                		empresa.agregarLlamadaLocal(indiceLinea, min);
+                	case "Larga distancia":
+                		empresa.agregarLlamadaLargaDistancia(indiceLinea, min);
                 		break;
+                		
                 		
                 	case "Celular":
                 		empresa.agregarLlamadaLocal(indiceLinea, min);

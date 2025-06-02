@@ -127,7 +127,7 @@ public class LineaTelefonica
     	numeroMinutos += pMinutos;
     	
     	// Aumenta el costo de la llamada múltiplicando la duración de la llamada por el précio
-    	costoLlamadas = pMinutos * 380;
+    	costoLlamadas = (double)pMinutos * 380;
     	
     }
 
@@ -145,7 +145,7 @@ public class LineaTelefonica
     	numeroMinutos += pMinutos;
     	
     	// Aumenta el costo de la llamada por el précio
-    	costoLlamadas = pMinutos * 999;
+    	costoLlamadas = (double)pMinutos * 999;
 
     }
 
