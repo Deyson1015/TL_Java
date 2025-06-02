@@ -138,53 +138,24 @@ public class InterfazLineasTelefonicas extends JFrame
                 }
                 Object[] possibilities = { "Local", "Larga distancia", "Celular" };
                 String tipo = ( String )JOptionPane.showInputDialog( this, "Tipo de llamada:", "Tipo", JOptionPane.QUESTION_MESSAGE, null, possibilities, "Local" );
-                if( tipo != null )
-                {
-                    if( pNumeroLinea == 1 )
-                    {
-                        if( "Local".equals( tipo ) )
-                        {
-                            empresa.agregarLlamadaLocalLinea1( min );
-                        }
-                        else if( "Larga distancia".equals( tipo ) )
-                        {
-                            empresa.agregarLlamadaLargaDistanciaLinea1( min );
-                        }
-                        else if( "Celular".equals( tipo ) )
-                        {
-                            empresa.agregarLlamadaCelularLinea1( min );
-                        }
-                    }
-                    else if( pNumeroLinea == 2 )
-                    {
-                        if( "Local".equals( tipo ) )
-                        {
-                            empresa.agregarLlamadaLocalLinea2( min );
-                        }
-                        else if( "Larga distancia".equals( tipo ) )
-                        {
-                            empresa.agregarLlamadaLargaDistanciaLinea2( min );
-                        }
-                        else if( "Celular".equals( tipo ) )
-                        {
-                            empresa.agregarLlamadaCelularLinea2( min );
-                        }
-                    }
-                    else if( pNumeroLinea == 3 )
-                    {
-                        if( "Local".equals( tipo ) )
-                        {
-                            empresa.agregarLlamadaLocalLinea3( min );
-                        }
-                        else if( "Larga distancia".equals( tipo ) )
-                        {
-                            empresa.agregarLlamadaLargaDistanciaLinea3( min );
-                        }
-                        else if( "Celular".equals( tipo ) )
-                        {
-                            empresa.agregarLlamadaCelularLinea3( min );
-                        }
-                    }
+                if( tipo != null ) {
+                	int indiceLinea = pNumeroLinea - 1;
+                	
+                	switch (tipo) {
+                	
+                	case "Local":
+                		empresa.agregarLlamadaLocal(indiceLinea, min);
+                		break;
+                		
+                	case "Larga Distacia":
+                		empresa.agregarLlamadaLocal(indiceLinea, min);
+                		break;
+                		
+                	case "Celular":
+                		empresa.agregarLlamadaLocal(indiceLinea, min);
+                		break;
+                	}
+                  
                     actualizar( );
                 }
             }
