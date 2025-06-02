@@ -51,17 +51,17 @@ public class EmpresaTest
     {
         empresa = new Empresa( );
 
-        empresa.agregarLlamadaLocalLinea1( 1 );
-        empresa.agregarLlamadaLargaDistanciaLinea1( 2 );
-        empresa.agregarLlamadaCelularLinea1( 3 );
+        empresa.agregarLlamadaLocal( 1 );
+        empresa.agregarLlamadaLargaDistancia( 2 );
+        empresa.agregarLlamadaCelular( 3 );
 
-        empresa.agregarLlamadaLocalLinea2( 10 );
-        empresa.agregarLlamadaLargaDistanciaLinea2( 20 );
-        empresa.agregarLlamadaCelularLinea2( 30 );
+        empresa.agregarLlamadaLocal( 10 );
+        empresa.agregarLlamadaLargaDistancia( 20 );
+        empresa.agregarLlamadaCelular( 30 );
 
-        empresa.agregarLlamadaLocalLinea2( 100 );
-        empresa.agregarLlamadaLargaDistanciaLinea2( 200 );
-        empresa.agregarLlamadaCelularLinea2( 300 );
+        empresa.agregarLlamadaLocal( 100 );
+        empresa.agregarLlamadaLargaDistancia( 200 );
+        empresa.agregarLlamadaCelular( 300 );
     }
 
     /**
@@ -95,7 +95,7 @@ public class EmpresaTest
     public void testAgregarLlamadaLocalLinea1( )
     {
         setupEscenario1( );
-        empresa.agregarLlamadaLocalLinea1( 10 );
+        empresa.agregarLlamadaLocal( 10 );
         assertEquals( "La llamada no quedó registrada", 1, empresa.darLinea1( ).darNumeroLlamadas( ) );
     }
 
@@ -111,7 +111,7 @@ public class EmpresaTest
     public void testAgregarLlamadaLocalLinea2( )
     {
         setupEscenario1( );
-        empresa.agregarLlamadaLocalLinea2( 10 );
+        empresa.agregarLlamadaLocal( 10 );
         assertEquals( "La llamada no quedó registrada", 1, empresa.darLinea2( ).darNumeroLlamadas( ) );
     }
 
@@ -127,7 +127,7 @@ public class EmpresaTest
     public void testAgregarLlamadaLocalLinea3( )
     {
         setupEscenario1( );
-        empresa.agregarLlamadaLocalLinea3( 10 );
+        empresa.agregarLlamadaLocal( 10 );
         assertEquals( "La llamada no quedó registrada", 1, empresa.darLinea3( ).darNumeroLlamadas( ) );
     }
 
@@ -143,7 +143,7 @@ public class EmpresaTest
     public void testAgregarLlamadaLargaDistanciaLinea1( )
     {
         setupEscenario1( );
-        empresa.agregarLlamadaLargaDistanciaLinea1( 10 );
+        empresa.agregarLlamadaLargaDistancia( 10 );
         assertEquals( "La llamada no quedó registrada", 1, empresa.darLinea1( ).darNumeroLlamadas( ) );
     }
 
@@ -159,7 +159,7 @@ public class EmpresaTest
     public void testAgregarLlamadaLargaDistanciaLinea2( )
     {
         setupEscenario1( );
-        empresa.agregarLlamadaLargaDistanciaLinea2( 10 );
+        empresa.agregarLlamadaLargaDistancia( 10 );
         assertEquals( "La llamada no quedó registrada", 1, empresa.darLinea2( ).darNumeroLlamadas( ) );
     }
 
@@ -175,7 +175,7 @@ public class EmpresaTest
     public void testAgregarLlamadaLargaDistanciaLinea3( )
     {
         setupEscenario1( );
-        empresa.agregarLlamadaLargaDistanciaLinea3( 10 );
+        empresa.agregarLlamadaLargaDistancia( 10 );
         assertEquals( "La llamada no quedó registrada", 1, empresa.darLinea3( ).darNumeroLlamadas( ) );
     }
 
@@ -191,7 +191,7 @@ public class EmpresaTest
     public void testAgregarCelularDistanciaLinea1( )
     {
         setupEscenario1( );
-        empresa.agregarLlamadaCelularLinea1( 10 );
+        empresa.agregarLlamadaCelular( 10 );
         assertEquals( "La llamada no quedó registrada", 1, empresa.darLinea1( ).darNumeroLlamadas( ) );
     }
 
@@ -207,7 +207,7 @@ public class EmpresaTest
     public void testAgregarCelularDistanciaLinea2( )
     {
         setupEscenario1( );
-        empresa.agregarLlamadaCelularLinea2( 10 );
+        empresa.agregarLlamadaCelular( 10 );
         assertEquals( "La llamada no quedó registrada", 1, empresa.darLinea2( ).darNumeroLlamadas( ) );
     }
 
@@ -223,7 +223,7 @@ public class EmpresaTest
     public void testAgregarCelularDistanciaLinea3( )
     {
         setupEscenario1( );
-        empresa.agregarLlamadaCelularLinea3( 10 );
+        empresa.agregarLlamadaCelular( 10 );
         assertEquals( "La llamada no quedó registrada", 1, empresa.darLinea3( ).darNumeroLlamadas( ) );
     }
 
