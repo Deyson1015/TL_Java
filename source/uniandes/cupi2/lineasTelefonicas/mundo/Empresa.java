@@ -21,21 +21,11 @@ public class Empresa
     //-----------------------------------------------------------------
 
     /**
-     * Línea telefónica número 1.
+     * Líneas telefónicas.
      */
-    private LineaTelefonica linea1;
+    private LineaTelefonica[] lineas; // Array que contendra las 3 lineas telefonicas
 
-    /**
-     * Línea telefónica número 2.
-     */
-    private LineaTelefonica linea2;
-
-    /**
-     * Línea telefónica número 3.
-     */
-    private LineaTelefonica linea3;
-
-    //-----------------------------------------------------------------
+    // --------------------------------------------------------------
     // Métodos
     //-----------------------------------------------------------------
 
@@ -43,13 +33,16 @@ public class Empresa
      * Inicializa las líneas telefónicas de la empresa. <br>
      * <b>post: </b> Se inicializaron las 3 líneas telefónicas.
      */
-    public Empresa( )
+    public Empresa( ) // Constructor de la clase
     {
-        linea1 = new LineaTelefonica( );
+    	// Inicialize la 3 instancias de la clase empresa
+        lineas = new LineaTelefonica[3];
         
-
-
-        // TODO Parte3 PuntoA: Construir linea2 y linea3.
+        lineas[0] = new LineaTelefonica( );
+        
+        lineas[1] = new LineaTelefonica( );
+        
+        lineas[2] = new LineaTelefonica( );
 
     }
 
@@ -59,7 +52,8 @@ public class Empresa
      */
     public LineaTelefonica darLinea1( )
     {
-        // TODO Parte3 PuntoB: Completar el método según la documentación dada.
+    	return lineas[0]; // Metodo getter para enviar información al usuario
+ 
     }
 
     /**
@@ -68,7 +62,8 @@ public class Empresa
      */
     public LineaTelefonica darLinea2( )
     {
-        // TODO Parte3 PuntoC: Completar el método según la documentación dada.
+        return lineas[1]; // Metodo getter para enviar información al usuario
+ 
     }
 
     /**
@@ -77,7 +72,8 @@ public class Empresa
      */
     public LineaTelefonica darLinea3( )
     {
-        // TODO Parte3 PuntoD: Completar el método según la documentación dada.
+    	return lineas[2]; // Metodo getter para enviar información al usuario
+  
     }
 
     /**
@@ -86,7 +82,12 @@ public class Empresa
 	 */
 	public int darTotalNumeroLlamadas( )
 	{
-        // TODO Parte3 PuntoE: Completar el método según la documentación dada.
+		int totalLlamadas = 0; // Inicializamos una variable donde acumulamos las llamadas
+		
+		for (LineaTelefonica linea : lineas) { // Bucle for-each para recorrer los elementos del array
+			totalLlamadas += linea.darNumeroLlamadas(); // En cada iteración obtenemos el número de llamada de cada linea y se suma a la variable totalLlamadas
+		}
+		return totalLlamadas; // Retornamos el total de llamadas 
 	}
 
 	/**
@@ -95,7 +96,12 @@ public class Empresa
 	 */
 	public int darTotalMinutos( )
 	{
-        // TODO Parte3 PuntoF: Completar el método según la documentación dada.
+		int totalMinutos = 0; // Inicializamos una variable donde acumulamos los minutos
+		
+		for (LineaTelefonica linea : lineas) { // Bucle for-each para recorrer los elementos del array
+			totalMinutos += linea.darNumeroMinutos(); // Mismo proceso del metodo anterior
+		}
+		return totalMinutos; // Retornamos el total de minutos
 	}
 
 	/**
@@ -103,8 +109,13 @@ public class Empresa
 	 * @return Costo total de las tres líneas.
 	 */
 	public double darTotalCostoLlamadas( )
-	{        
-        // TODO Parte3 PuntoG: Completar el método según la documentación dada.
+	{      
+		double costoTotal = 0.0; // Inicializamos una variable donde acumulamos el costo
+		
+		for (LineaTelefonica linea : lineas) { // Bucle for-each para recorrer los elementos del array
+			costoTotal += linea.darCostoLlamadas(); // Mismo proceso del metodo anterior
+		}
+		return costoTotal; // Retornamos el costo total
 	}
 
 	/**
@@ -113,7 +124,17 @@ public class Empresa
 	 */
 	public double darCostoPromedioMinuto( )
 	{
-        // TODO Parte3 PuntoH: Completar el método según la documentación dada.
+		
+		int totalMinutos = darTotalMinutos();
+		double costoTotal = darTotalCostoLlamadas();
+		
+		if (totalMinutos == 0) // Condicional para evitar dividir por 0
+		{
+			return 0.0;
+		}
+		
+		return costoTotal / totalMinutos; // Retornamos el promedio  
+      
 	}
 
 	/**
@@ -121,31 +142,15 @@ public class Empresa
      * <b>post: </b> Se agregó la llamada a la línea 1.
      * @param pMinutos Número de minutos de la llamada. pMinutos > 0.
      */
-    public void agregarLlamadaLocalLinea1( int pMinutos )
+    public void agregarLlamadaLocal( int indiceLinea, int pMinutos )
     {
-        linea1.agregarLlamadaLocal( pMinutos );
+    	if (indiceLinea >= 0 && indiceLinea < lineas.length) {
+    		lineas[indiceLinea].agregarLlamadaLocal(pMinutos);
+    	}
+        
     }
 
-    /**
-     * Agrega una llamada local a la línea telefónica 2. <br>
-     * <b>post: </b> Se agregó la llamada a la línea 2.
-     * @param pMinutos Número de minutos de la llamada. pMinutos > 0.
-     */
-    public void agregarLlamadaLocalLinea2( int pMinutos )
-    {
-        // TODO Parte3 PuntoI: Completar el método según la documentación dada.
-    }
-
-    /**
-     * Agrega una llamada local a la línea telefónica 3. <br>
-     * <b>post: </b> Se agrega la llamada a la línea 3.
-     * @param pMinutos Número de minutos de la llamada. pMinutos > 0.
-     */
-    public void agregarLlamadaLocalLinea3( int pMinutos )
-    {
-        // TODO Parte3 PuntoJ: Completar el método según la documentación dada.
-    }
-
+  
     /**
      * Agrega una llamada de larga distancia a la línea telefónica 1. <br>
      * <b>post: </b> Se agrega la llamada a la línea 1.
@@ -212,8 +217,11 @@ public class Empresa
      */
     public void reiniciar( )
     {
-        linea1.reiniciar( );
-        // TODO Parte3 PuntoB: Completar el método para reiniciar las lineas 2 y 3.
+        lineas[0].reiniciar( );
+        
+        lineas[1].reiniciar();
+        
+        lineas[2].reiniciar();
     }
 
     //-----------------------------------------------------------------
