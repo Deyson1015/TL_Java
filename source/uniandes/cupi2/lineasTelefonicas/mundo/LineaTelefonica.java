@@ -89,6 +89,11 @@ public class LineaTelefonica
 	 */
 	public void reiniciar( )
 	{
+		numeroLlamadas = 0;
+		
+		numeroMinutos = 0;
+		
+		costoLlamadas = 0.0;
         // TODO Parte2 PuntoE: Reiniciar el número de llamadas, número de minutos y costo de llamadas en 0.
 	}
 
@@ -101,10 +106,10 @@ public class LineaTelefonica
     {
         //Una llamada más
         numeroLlamadas = numeroLlamadas + 1;
-        //
+        
         //Suma los minutos consumidos
         numeroMinutos = numeroMinutos + pMinutos;
-        //
+        
         //Suma el costo (costo por minuto: 35 pesos)
         costoLlamadas = costoLlamadas + ( pMinutos * 35 );
     }
@@ -116,6 +121,13 @@ public class LineaTelefonica
      */
     public void agregarLlamadaLargaDistancia( int pMinutos )
     {
+    	numeroLlamadas += 1;
+    	
+    	numeroMinutos += pMinutos;
+    	
+    	costoLlamadas = pMinutos * 380;
+    	
+    	
         // TODO Parte2 PuntoF: Completar el método según la documentación dada.
     }
 
@@ -126,6 +138,11 @@ public class LineaTelefonica
      */
     public void agregarLlamadaCelular( int pMinutos )
     {
+    	numeroLlamadas += 1;
+    	
+    	numeroMinutos += pMinutos;
+    	
+    	costoLlamadas = pMinutos * 999;
         // TODO Parte2 PuntoG: Completar el método según la documentación dada.
     }
 
