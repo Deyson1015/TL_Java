@@ -153,7 +153,7 @@ public class InterfazLineasTelefonicas extends JFrame
                 		
                 		
                 	case "Celular":
-                		empresa.agregarLlamadaLocal(indiceLinea, min);
+                		empresa.agregarLlamadaCelular(indiceLinea, min);
                 		break;
                 	}
                   

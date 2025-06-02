@@ -118,7 +118,7 @@ public class LineaTelefonica
      * <b>post: </b> Se incrementó en 1 numeroDeLlamadas, se incremento numeroDeMinutos en minutos, costoLlamadas aumentó en ( minutos * 380 )
      * @param pMinutos Número de minutos de la llamada. pMinutos >0.
      */
-    public void agregarLlamadaLargaDistancia( int pMinutos )
+    public void agregarLlamadaLargaDistancia( int pMinutos ) 
     {
     	// Incrementa en 1 el número de llamadas
     	numeroLlamadas += 1;
@@ -127,7 +127,7 @@ public class LineaTelefonica
     	numeroMinutos += pMinutos;
     	
     	// Aumenta el costo de la llamada múltiplicando la duración de la llamada por el précio
-    	costoLlamadas = (double)pMinutos * 380;
+    	costoLlamadas += (double)pMinutos * 380;
     	
     }
 
@@ -145,7 +145,7 @@ public class LineaTelefonica
     	numeroMinutos += pMinutos;
     	
     	// Aumenta el costo de la llamada por el précio
-    	costoLlamadas = (double)pMinutos * 999;
+    	costoLlamadas += (double)pMinutos * 999;
 
     }
 

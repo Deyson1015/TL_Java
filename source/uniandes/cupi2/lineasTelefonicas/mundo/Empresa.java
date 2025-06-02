@@ -169,29 +169,12 @@ public class Empresa
      * <b>post: </b> Se agrega la llamada a la línea 1.
      * @param pMinutos Número de minutos de la llamada. pMinutos > 0.
      */
-    public void agregarLlamadaCelularLinea1( int pMinutos )
+    public void agregarLlamadaCelular( int indiceLinea, int pMinutos )
     {
-    	linea1.agregarLlamadaCelular( pMinutos );
-    }
-
-    /**
-     * Agrega una llamada a celular a la línea telefónica 2. <br>
-     * <b>post: </b> Se agrega la llamada a la línea 2.
-     * @param pMinutos Número de minutos de la llamada. pMinutos > 0.
-     */
-    public void agregarLlamadaCelularLinea2( int pMinutos )
-    {
-        // TODO Parte3 PuntoM: Completar el método según la documentación dada.
-    }
-
-    /**
-     * Agrega una llamada a celular a la línea telefónica 3. <br>
-     * <b>post: </b> Se agrega la llamada a la línea 3.
-     * @param pMinutos Número de minutos de la llamada. pMinutos > 0.
-     */
-    public void agregarLlamadaCelularLinea3( int pMinutos )
-    {
-        // TODO Parte3 PuntoN: Completar el método según la documentación dada.
+        // Valida que el índice de la línea sea válido antes de intentar acceder a ella.
+        if (indiceLinea >= 0 && indiceLinea < lineas.length) {
+            lineas[indiceLinea].agregarLlamadaCelular(pMinutos);
+        }
     }
 
     /**
