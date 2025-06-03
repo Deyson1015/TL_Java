@@ -102,14 +102,16 @@ public class LineaTelefonica
      * @param pMinutos Número de minutos de la llamada. pMinutos >0.
      */
 	
-	
-	public void agregarLlamada(int pMinutos, double costo)
+	// Metodo que avarca y agrega todo tipo de llamada
+	private void agregarLlamada(int pMinutos, double costo)
 	{
 		numeroLlamadas++;
 		numeroMinutos += pMinutos;
 		costoLlamadas += pMinutos * costo;
 		
 	}
+	
+	// Metodo para agregar llamadas locales, utilizando el metodo general
     public void agregarLlamadaLocal( int pMinutos )
     {
        agregarLlamada(pMinutos, 35);
@@ -121,6 +123,8 @@ public class LineaTelefonica
      * <b>post: </b> Se incrementó en 1 numeroDeLlamadas, se incremento numeroDeMinutos en minutos, costoLlamadas aumentó en ( minutos * 380 )
      * @param pMinutos Número de minutos de la llamada. pMinutos >0.
      */
+    
+    // Metodo para agregar llamadas a distaci, utilizando el metodo general
     public void agregarLlamadaLargaDistancia( int pMinutos ) 
     {
     	agregarLlamada(pMinutos, 380);
@@ -132,6 +136,8 @@ public class LineaTelefonica
      * <b>post: </b> Se incrementó en 1 numeroDeLlamadas, se incremento numeroDeMinutos en minutos, costoLlamadas aumentó en ( minutos * 999 )
      * @param pMinutos Número de minutos de la llamada. pMinutos >0.
      */
+    
+    // Metodo para agregar llamadas en celular, utilizando el metodo general
     public void agregarLlamadaCelular( int pMinutos )
     {
     	agregarLlamada(pMinutos, 999);
