@@ -262,6 +262,8 @@ public class EmpresaTest
      * <b> Casos de prueba: </b> <br>
      * 1. La empresa tiene llamadas en las 3 líneas telefónicas.
      */
+    
+    @Test
     public void testDarTotalCosto( )
     {
         setupEscenario2( );

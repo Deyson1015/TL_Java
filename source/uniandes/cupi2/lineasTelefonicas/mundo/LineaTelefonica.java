@@ -101,16 +101,19 @@ public class LineaTelefonica
      * <b>post: </b> Se incrementó en 1 numeroDeLlamadas, se incremento numeroDeMinutos en minutos, costoLlamadas aumentó en ( minutos * 35 ).
      * @param pMinutos Número de minutos de la llamada. pMinutos >0.
      */
+	
+	
+	public void agregarLlamada(int pMinutos, double costo)
+	{
+		numeroLlamadas++;
+		numeroMinutos += pMinutos;
+		costoLlamadas += pMinutos * costo;
+		
+	}
     public void agregarLlamadaLocal( int pMinutos )
     {
-        //Una llamada más
-        numeroLlamadas = numeroLlamadas + 1;
-        
-        //Suma los minutos consumidos
-        numeroMinutos = numeroMinutos + pMinutos;
-        
-        //Suma el costo (costo por minuto: 35 pesos)
-        costoLlamadas = costoLlamadas + ( pMinutos * 35 );
+       agregarLlamada(pMinutos, 35);
+      
     }
 
     /**
@@ -120,14 +123,7 @@ public class LineaTelefonica
      */
     public void agregarLlamadaLargaDistancia( int pMinutos ) 
     {
-    	// Incrementa en 1 el número de llamadas
-    	numeroLlamadas += 1;
-    	
-    	// Incrementa el número de minutos con el metodo que contiene la cantidad de minutos que duro la llamada
-    	numeroMinutos += pMinutos;
-    	
-    	// Aumenta el costo de la llamada múltiplicando la duración de la llamada por el précio
-    	costoLlamadas += (double)pMinutos * 380;
+    	agregarLlamada(pMinutos, 380);
     	
     }
 
@@ -138,15 +134,8 @@ public class LineaTelefonica
      */
     public void agregarLlamadaCelular( int pMinutos )
     {
-    	// Incrementa en 1 el número de llamadas
-    	numeroLlamadas += 1;
+    	agregarLlamada(pMinutos, 999);
     	
-    	// Incrementa el número de minutos
-    	numeroMinutos += pMinutos;
-    	
-    	// Aumenta el costo de la llamada por el précio
-    	costoLlamadas += (double)pMinutos * 999;
-
     }
 
 }
