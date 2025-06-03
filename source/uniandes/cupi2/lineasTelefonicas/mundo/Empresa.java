@@ -138,6 +138,8 @@ public class Empresa
      * <b>post: </b> Se agregó la llamada a la línea 1.
      * @param pMinutos Número de minutos de la llamada. pMinutos > 0.
      */
+	
+	// Metodo general para agregar los 3 tipos de llamadas
 	private void agregarLlamada(int indiceLinea, int pMinutos, String tipo ) {
 		if (indiceLinea >= 0 && indiceLinea < lineas.length) {
 			switch (tipo) {
@@ -153,6 +155,8 @@ public class Empresa
 			} 
 		} 
 	}
+	
+	// Metodo para agregar llamadas locales, utilizando el metodo general
     public void agregarLlamadaLocal( int indiceLinea, int pMinutos )
     {
     	agregarLlamada(indiceLinea, pMinutos, "local");
