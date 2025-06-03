@@ -128,13 +128,9 @@ public class Empresa
 		int totalMinutos = darTotalMinutos();
 		double costoTotal = darTotalCostoLlamadas();
 		
-		if (totalMinutos == 0) // Condicional para evitar dividir por 0
-		{
-			return 0.0;
-		}
+		return (totalMinutos == 0) ? 0.0 : costoTotal / totalMinutos; 	// if ternario
 		
-		return costoTotal / totalMinutos; // Retornamos el promedio  
-      
+
 	}
 
 	/**

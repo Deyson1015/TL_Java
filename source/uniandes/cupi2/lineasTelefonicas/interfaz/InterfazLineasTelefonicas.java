@@ -150,8 +150,7 @@ public class InterfazLineasTelefonicas extends JFrame
                 	case "Larga distancia":
                 		empresa.agregarLlamadaLargaDistancia(indiceLinea, min);
                 		break;
-                		
-                		
+      
                 	case "Celular":
                 		empresa.agregarLlamadaCelular(indiceLinea, min);
                 		break;
