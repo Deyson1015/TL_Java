@@ -142,11 +142,24 @@ public class Empresa
      * <b>post: </b> Se agregó la llamada a la línea 1.
      * @param pMinutos Número de minutos de la llamada. pMinutos > 0.
      */
+	private void agregarLlamada(int indiceLinea, int pMinutos, String tipo ) {
+		if (indiceLinea >= 0 && indiceLinea < lineas.length) {
+			switch (tipo) {
+			   case "local":
+				   lineas[indiceLinea].agregarLlamadaLocal(pMinutos);
+				   break;
+			   case "larga distancia": 
+				   lineas[indiceLinea].agregarLlamadaLargaDistancia(pMinutos);
+				   break;
+			   case "celular":
+				   lineas[indiceLinea].agregarLlamadaCelular(pMinutos);
+				   break;	   
+			} 
+		} 
+	}
     public void agregarLlamadaLocal( int indiceLinea, int pMinutos )
     {
-    	if (indiceLinea >= 0 && indiceLinea < lineas.length) {
-    		lineas[indiceLinea].agregarLlamadaLocal(pMinutos);
-    	}
+    	agregarLlamada(indiceLinea, pMinutos, "local");
         
     }
 
@@ -157,10 +170,7 @@ public class Empresa
      */
     public void agregarLlamadaLargaDistancia( int indiceLinea, int pMinutos )
     {
-        // Valida que el índice de la línea sea válido antes de intentar acceder a ella.
-        if (indiceLinea >= 0 && indiceLinea < lineas.length) {
-            lineas[indiceLinea].agregarLlamadaLargaDistancia(pMinutos);
-        }
+    	agregarLlamada(indiceLinea, pMinutos, "larga distancia");
 
     }
 
@@ -171,10 +181,7 @@ public class Empresa
      */
     public void agregarLlamadaCelular( int indiceLinea, int pMinutos )
     {
-        // Valida que el índice de la línea sea válido antes de intentar acceder a ella.
-        if (indiceLinea >= 0 && indiceLinea < lineas.length) {
-            lineas[indiceLinea].agregarLlamadaCelular(pMinutos);
-        }
+    	agregarLlamada(indiceLinea, pMinutos, "celular");
     }
 
     /**
