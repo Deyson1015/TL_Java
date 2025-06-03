@@ -45,34 +45,39 @@ public class LineaTelefonica
      */
     public LineaTelefonica( )
     {
-    	// TODO Parte2 PuntoA: Inicializar el número de llamadas, número de minutos y costo de llamadas en 0.
+    	numeroLlamadas = 0;
+    	numeroMinutos = 0;
+    	costoLlamadas = 0.0; // Inicialize los atribusto de número de llamadas, número de minutos y costo de llamadas
+    	
     }
 
     /**
      * Retorna el costo total de las llamadas realizadas.
      * @return Costo total de las llamadas realizadas.
      */
-    public double darCostoLlamadas( )
+    public double darCostoLlamadas( )  // Metodo getter para enviar información al usuario
     {
-        // TODO Parte2 PuntoB: Completar el método según la documentación dada.
+    	return costoLlamadas;
     }
 
     /**
      * Retorna el número de llamadas realizadas por esta línea.
      * @return Número de llamadas realizadas por esta línea.
      */
-    public int darNumeroLlamadas( )
+    public int darNumeroLlamadas( )  // Metodo getter para enviar información al usuario
     {
-        // TODO Parte2 PuntoC: Completar el método según la documentación dada.
+    	return numeroLlamadas;
+       
     }
 
     /**
      * Retorna el número de minutos consumidos.
      * @return Número de minutos consumidos.
      */
-    public int darNumeroMinutos( )
+    public int darNumeroMinutos( )  // Metodo getter para enviar información al usuario
     {
-        // TODO Parte2 PuntoD: Completar el método según la documentación dada.
+    	return numeroMinutos;
+       
     }
 
     /**
@@ -81,24 +86,36 @@ public class LineaTelefonica
 	 */
 	public void reiniciar( )
 	{
-        // TODO Parte2 PuntoE: Reiniciar el número de llamadas, número de minutos y costo de llamadas en 0.
-	}
+		// Reinicia el número de llamadas a 0
+		numeroLlamadas = 0;
+		
+		// Reinicia el número de minutos a 0
+		numeroMinutos = 0;
+		
+		// Reinicia el costo de llamada a 0
+		costoLlamadas = 0.0;
+  	}
 
 	/**
      * Agrega una llamada local a la línea telefónica <br>
      * <b>post: </b> Se incrementó en 1 numeroDeLlamadas, se incremento numeroDeMinutos en minutos, costoLlamadas aumentó en ( minutos * 35 ).
      * @param pMinutos Número de minutos de la llamada. pMinutos >0.
      */
+	
+	// Metodo que avarca y agrega todo tipo de llamada
+	private void agregarLlamada(int pMinutos, double costo)
+	{
+		numeroLlamadas++;
+		numeroMinutos += pMinutos;
+		costoLlamadas += pMinutos * costo;
+		
+	}
+	
+	// Metodo para agregar llamadas locales, utilizando el metodo general
     public void agregarLlamadaLocal( int pMinutos )
     {
-        //Una llamada más
-        numeroLlamadas = numeroLlamadas + 1;
-        //
-        //Suma los minutos consumidos
-        numeroMinutos = numeroMinutos + pMinutos;
-        //
-        //Suma el costo (costo por minuto: 35 pesos)
-        costoLlamadas = costoLlamadas + ( pMinutos * 35 );
+       agregarLlamada(pMinutos, 35);
+      
     }
 
     /**
@@ -106,9 +123,12 @@ public class LineaTelefonica
      * <b>post: </b> Se incrementó en 1 numeroDeLlamadas, se incremento numeroDeMinutos en minutos, costoLlamadas aumentó en ( minutos * 380 )
      * @param pMinutos Número de minutos de la llamada. pMinutos >0.
      */
-    public void agregarLlamadaLargaDistancia( int pMinutos )
+    
+    // Metodo para agregar llamadas a distaci, utilizando el metodo general
+    public void agregarLlamadaLargaDistancia( int pMinutos ) 
     {
-        // TODO Parte2 PuntoF: Completar el método según la documentación dada.
+    	agregarLlamada(pMinutos, 380);
+    	
     }
 
     /**
@@ -116,9 +136,12 @@ public class LineaTelefonica
      * <b>post: </b> Se incrementó en 1 numeroDeLlamadas, se incremento numeroDeMinutos en minutos, costoLlamadas aumentó en ( minutos * 999 )
      * @param pMinutos Número de minutos de la llamada. pMinutos >0.
      */
+    
+    // Metodo para agregar llamadas en celular, utilizando el metodo general
     public void agregarLlamadaCelular( int pMinutos )
     {
-        // TODO Parte2 PuntoG: Completar el método según la documentación dada.
+    	agregarLlamada(pMinutos, 999);
+    	
     }
 
 }
